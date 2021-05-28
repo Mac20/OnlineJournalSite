@@ -33,3 +33,12 @@
 	font-size: 12px;
   color: #fff;
 }
+
+.btn-primary {
+  margin-top: 15px;
+}
+
+.titleOfTitle, .titleOfBody{
+  padding: 10px;
+  font-weight: bold;
+}

@@ -2,14 +2,14 @@
 
 <h1> Compose </h1>
 
-<p> Title </p>
 <form class="form-row align-items-center" action = "/compose" method = "post">
+<label class = 'titleOfTitle'> Title </label>
   <div class="col-7">
     <input type="text" class="form-control" name="postTitle" placeholder="Example">
   </div>
-  <p>Post</p>
+  <label class = 'titleOfBody'>Post</label>
   <div class="col-7">
-    <input type="text" class="form-control" name="postTitle" placeholder="Example">
+    <textarea type="text" class="form-control" name="postBody" placeholder="Example" rows = '12'></textarea>
   </div>
   <div>
   <button type="submit" class="btn btn-primary mb-2" name = "publishButton">Publish</button>

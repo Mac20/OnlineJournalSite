@@ -11,6 +11,7 @@ const composeContent = "Compose your content here"
 
 const app = express();
 
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -18,9 +19,12 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+let posts = [];
+
 app.get('/', function(req, res) {
   res.render('home', {
     startingContent: homeStartingContent,
+    posts: posts
   });
 });
 
@@ -42,9 +46,21 @@ app.get('/compose', function(req, res) {
   });
 });
 
+app.get('/posts/:postName', function(req, res){
+console.log(req.params.postName);
+
+});
+
+
 app.post('/compose',function(req,res){
- console.log(req.body.postTitle);
-})
+  let post = {
+    title: req.body.postTitle,
+    body: req.body.postBody
+  };
+  posts.push(post);
+  res.redirect('/');
+});
+
 
 
 
